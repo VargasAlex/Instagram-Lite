@@ -3,9 +3,11 @@ const express = require("express")
 const app = express()
 const port = 3000
 const bodyParser = require("body-parser")
-const Post = require(".models/post")
+const Post = require("./models/post")
+const moment = require("moment")
 
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use('/public', express.static('public'))
 app.set("view engine", "ejs")
 app.listen(port, function () {
   console.log(`Listening on port ${port}`)
@@ -13,6 +15,19 @@ app.listen(port, function () {
 // end boilerplate code
 
 // begin routes for the app
-app.get("/", function (request, response) {
+app.get("/",  (request, response) => {
 
 });
+
+app.post("/posts", (request, response) => {
+  const newPost = request.body;
+  newPost.published_at = new Date ();
+  Post.create(newPost)
+    .then(post => {
+      // response.render("/posts/show")
+      console.log(post)
+    })
+})
+
+
+

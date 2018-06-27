@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS posts;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  name TEXT
+  name TEXT,
 );
 
 CREATE TABLE posts (
