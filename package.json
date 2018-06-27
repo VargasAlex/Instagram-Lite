@@ -12,5 +12,8 @@
     "url": "git@git.generalassemb.ly:VargasAlex/Instagram-Lite.git"
   },
   "author": "Alex Vargas",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
