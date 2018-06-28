@@ -11,8 +11,11 @@ Post.findById = id => {
   return db.one (
     "SELECT * FROM posts JOIN users ON users.id = posts.user_id WHERE posts.id = ${id}", {id : id}
   )
-    // ("JOIN users WHERE users.id = posts.user_id")
-  // join on users where user_id = id
+};
+
+Post.update = post => {
+  return db.one(
+    "UPDATE posts SET user_id = ${user_id}, photo_url = ${photo_url}, description = ${description} WHERE id = ${id} RETURNING *", post)
 };
 
 module.exports = Post;

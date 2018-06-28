@@ -1,6 +1,7 @@
 <% include ../partials/header %>
 
 <div class="container">
+  <p><a href="/posts/<%= post.id %>/edit">Edit</a></p>
   <p class="user">
   <img class ="profile-pic" src= "<%= post.img_url %>">
     <%= post.user_name %>
