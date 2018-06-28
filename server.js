@@ -56,6 +56,14 @@ app.put('/posts/:id', (request, response) => {
     })
 })
 
+app.delete('/posts/:id', (request, response) => {
+  const id = Number(request.params.id)
+  Post.delete(id)
+    .then(post => {
+      response.redirect(302, '/')
+    })
+});
+
 app.post("/posts", (request, response) => {
   const newPost = request.body;
   newPost.published_at = new Date ();

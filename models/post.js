@@ -18,4 +18,10 @@ Post.update = post => {
     "UPDATE posts SET user_id = ${user_id}, photo_url = ${photo_url}, description = ${description} WHERE id = ${id} RETURNING *", post)
 };
 
+Post.delete = id => {
+  return db.result(
+    "DELETE FROM posts WHERE id = ${id}", {id: id}
+  )
+};
+
 module.exports = Post;
