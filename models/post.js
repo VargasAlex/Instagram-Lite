@@ -4,7 +4,7 @@ const Post = {};
 
 Post.all = post => {
   return db.any(
-    "SELECT * FROM posts"
+    "SELECT * FROM posts JOIN users ON users.id = posts.user_id"
   )
 };
 

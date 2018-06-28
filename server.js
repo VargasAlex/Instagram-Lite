@@ -21,6 +21,10 @@ app.listen(port, function () {
 app.get("/",  (request, response) => {
   Post.all()
     .then(posts => {
+      // console.log('this is posts:', posts);
+      // let newArr = posts.map(post => {
+      //   return moment....
+      // })
       response.render('posts/homepage', {posts: posts})
     })
 });
@@ -81,6 +85,7 @@ app.get("/posts/:id", (request, response) => {
   const id = Number(request.params.id)
   Post.findById(id)
     .then(post => {
+      console.log('this is post in findbyid:', post);
       post.published_at = moment(post.published_at).startOf('hours').fromNow()
       // response.render("posts/show", {post: post})
       return post
