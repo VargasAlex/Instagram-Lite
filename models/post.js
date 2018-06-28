@@ -9,7 +9,7 @@ return db.one(
 
 Post.findById = id => {
   return db.one (
-    "SELECT * FROM posts JOIN users ON users.id = posts.user_id WHERE users.id = ${id}", {id : id}
+    "SELECT * FROM posts JOIN users ON users.id = posts.user_id WHERE posts.id = ${id}", {id : id}
   )
     // ("JOIN users WHERE users.id = posts.user_id")
   // join on users where user_id = id

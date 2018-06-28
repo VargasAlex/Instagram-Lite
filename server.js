@@ -20,12 +20,19 @@ app.get("/",  (request, response) => {
 
 });
 
+app.get("/posts/new", (request, response) => {
+  User.all()
+    .then(users => {
+      response.render('posts/new', {users: users})
+    })
+});
+
 app.post("/posts", (request, response) => {
   const newPost = request.body;
   newPost.published_at = new Date ();
   Post.create(newPost)
     .then(post => {
-      // response.render("/posts/show")
+      response.redirect(302, `/posts/${post.id}`)
       console.log(post)
     })
 })
@@ -45,4 +52,6 @@ app.get("/posts/:id", (request, response) => {
           })
     })
 })
+
+
 

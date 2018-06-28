@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<h2>Create a post</h2>
+
+<form action="/posts" method="POST">
+  <div class="upload">
+    <label>Your Image</label>
+  </div>
+  <div class="input-group">
+    <label>User</label>
+    <select name="user_id">
+      <% users.forEach(user => { %>
+        <option value="<%= user.id %>"><%= user.name %></option>
+     <% }) %>
+    </select>
+  </div>
+ <div class="input-group">
+   <label>Image</label>
+   <input type="text" name="photo_url" placeholder="Insert image url here...">
+   <!-- <button type="submit" class="img-btn">Add Image</button> -->
+ </div>
+ <div class="input-group">
+   <label>Description</label>
+  <textarea rows="10" cols="50" name="description" placeholder="Add your description here..."></textarea>
+ </div>
+ <div class="input-group">
+   <button type="submit" class="btn">Post</button>
+ </div>
+</form>
+
+
+<% include ../partials/footer %>
