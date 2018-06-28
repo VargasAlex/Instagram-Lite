@@ -19,7 +19,10 @@ app.listen(port, function () {
 
 // begin routes for the app
 app.get("/",  (request, response) => {
-
+  Post.all()
+    .then(posts => {
+      response.render('posts/homepage', {posts: posts})
+    })
 });
 
 app.get("/posts/new", (request, response) => {

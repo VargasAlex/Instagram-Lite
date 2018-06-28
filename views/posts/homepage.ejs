@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+<h2>Instagram-Lite</h2>
+
+<div class="container">
+  <% posts.forEach(post => { %>
+    <a href="/posts/<%= post.id %>">
+      <p class="user">
+        <img class="profile-pic" src="<%= post.img_url %>">
+        <%= post.user_name %>
+      </p>
+      <p class="img">
+        <img class="add-img" src="<%= post.photo_url %>">
+      </p>
+      <p class="description">
+        <%= post.description %>
+      </p>
+      <p class="date-time">
+        <%= post.published_at %>
+      </p>
+    </a>
+    <% }) %>
+</div>
+
+<% include ../partials/footer %>
