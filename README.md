@@ -20,4 +20,4 @@ Project 2 CRUD app
 
 'npm install --save pg-promise bluebird pg-monitor'
 
-###Which initialized the app and installed node modules.
+###These commands initialized the app and installed node modules.
