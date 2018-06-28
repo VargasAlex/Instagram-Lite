@@ -2,7 +2,8 @@
 
 <div class="container">
   <p class="user">
-    <%= post.user_id %>
+  <img class ="profile-pic" src= "<%= post.img_url %>">
+    <%= post.user_name %>
   </p>
   <p class="img">
     <img src="<%= post.photo_url %>">

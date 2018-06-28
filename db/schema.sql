@@ -2,12 +2,13 @@ CREATE DATABASE instagramlite;
 
 \c instagramlite
 
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS posts;
+DROP TABLE if exists users cascade;
+DROP TABLE if exists posts cascade;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name TEXT,
+  img_url TEXT
 );
 
 CREATE TABLE posts (

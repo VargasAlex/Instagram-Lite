@@ -4,6 +4,7 @@ const app = express()
 const port = 3000
 const bodyParser = require("body-parser")
 const Post = require("./models/post")
+const User = require("./models/user")
 const moment = require("moment")
 
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -33,8 +34,15 @@ app.get("/posts/:id", (request, response) => {
   const id = Number(request.params.id)
   Post.findById(id)
     .then(post => {
-      post.published_at = moment(post.published_at).calendar()
-      response.render("posts/show", {post: post})
+      post.published_at = moment(post.published_at).startOf('hours').fromNow()
+      // response.render("posts/show", {post: post})
+      return post
+    }) .then (post => {
+        User.findById(post.user_id)
+          .then(user => {
+            post.user_name = user.name
+            response.render("posts/show", { post: post })
+          })
     })
 })
 
