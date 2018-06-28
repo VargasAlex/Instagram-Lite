@@ -29,5 +29,12 @@ app.post("/posts", (request, response) => {
     })
 })
 
-
+app.get("/posts/:id", (request, response) => {
+  const id = Number(request.params.id)
+  Post.findById(id)
+    .then(post => {
+      post.published_at = moment(post.published_at).calendar()
+      response.render("posts/show", {post: post})
+    })
+})
 

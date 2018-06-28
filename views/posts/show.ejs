@@ -1,15 +1,18 @@
 <% include ../partials/header %>
 
-  <p>
-    <!-- <%= post.user_id %>, <%= post.published_at %> -->
-    Hello!
+<div class="container">
+  <p class="user">
+    <%= post.user_id %>
   </p>
-<p>
-  <img src="<%= post.photo_url %>">
-</p>
-<p>
-  <!-- <%= post.description %> -->
-  My name is Alex!
-</p>
+  <p class="img">
+    <img src="<%= post.photo_url %>">
+  </p>
+  <p class="description">
+    <%= post.description %>
+  </p>
+  <p class="date-time">
+    <%= post.published_at %>
+  </p>
+</div>
 
 <% include ../partials/footer %>

@@ -1,0 +1,29 @@
+.container {
+  border: 3px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.user {
+  margin-left: -195px;
+  border: 3px solid black;
+  /* align-self: flex-start; */
+}
+
+.img {
+  border: 3px solid blue;
+}
+
+.description {
+  margin-left: -83px;
+  border: 3px solid green;
+}
+
+.date-time {
+  margin-left: -76px;
+  border: 3px solid orchid;
+}
