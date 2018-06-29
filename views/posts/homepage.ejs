@@ -1,17 +1,11 @@
 <% include ../partials/header %>
 
-<h2>Instagram-Lite</h2>
+<h2 class="home-h2">Instagram-Lite</h2>
 <div class="home-container">
   <div class="input-group">
     <% posts.forEach(post => { %>
-      <div class="input-group">
-        <a href="/posts/<%= post.id %>">Click</a>
-            <img class="profile-pic" src="<%= post.img_url %>">
-            <p><%= post.id %></p>
-            <p class="user">
-              <%= post.name %>
-          </p>
-      </div>
+        <p><a href="/posts/<%= post.post_id %>"><img class="profile-pic" src="<%= post.img_url %>">
+        <%= post.name %></a></p>
         <div class="img">
           <img class="add-img" src="<%= post.photo_url %>">
         </div>

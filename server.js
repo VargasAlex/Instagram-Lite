@@ -38,6 +38,7 @@ app.get("/posts/new", (request, response) => {
 
 app.get('/posts/:id/edit', (request, response) => {
   const id = Number(request.params.id)
+  console.log(request.params)
   Promise.all ([
     Post.findById(id)
       .then(post => {
@@ -56,15 +57,17 @@ app.get('/posts/:id/edit', (request, response) => {
 
 app.put('/posts/:id', (request, response) => {
   const updatePost = request.body
-  updatePost.id = request.params.id
+  updatePost.id = Number(request.params.id)
+  console.log('Updated post:', updatePost)
   Post.update(updatePost)
     .then(post => {
-      response.redirect(302, `/posts/${post.id}`)
+      response.redirect(302, `/posts/${posts.id}`)
     })
 })
 
 app.delete('/posts/:id', (request, response) => {
   const id = Number(request.params.id)
+  console.log('Hello!', id)
   Post.delete(id)
     .then(post => {
       response.redirect(302, '/')
@@ -76,7 +79,7 @@ app.post("/posts", (request, response) => {
   newPost.published_at = new Date ();
   Post.create(newPost)
     .then(post => {
-      response.redirect(302, `/posts/${post.id}`)
+      response.redirect(302, `/posts/${posts.id}`)
       console.log(post)
     })
 })
