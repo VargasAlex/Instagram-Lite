@@ -21,13 +21,13 @@ app.listen(port, function () {
 app.get("/",  (request, response) => {
   Post.all()
     .then(posts => {
-      // console.log('this is posts:', posts);
-      // let newArr = posts.map(post => {
-      //   return moment....
-      // })
       response.render('posts/homepage', {posts: posts})
     })
 });
+
+app.locals.fromNow = (date) => {
+  return moment(date).fromNow();
+}
 
 app.get("/posts/new", (request, response) => {
   User.all()
@@ -83,10 +83,10 @@ app.post("/posts", (request, response) => {
 
 app.get("/posts/:id", (request, response) => {
   const id = Number(request.params.id)
+  console.log(id);
   Post.findById(id)
     .then(post => {
-      console.log('this is post in findbyid:', post);
-      post.published_at = moment(post.published_at).startOf('hours').fromNow()
+      post.published_at = moment(post.published_at).startOf('hours').fromNow();
       // response.render("posts/show", {post: post})
       return post
     }) .then (post => {

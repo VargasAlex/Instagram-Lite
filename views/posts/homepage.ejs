@@ -5,21 +5,21 @@
   <div class="input-group">
     <% posts.forEach(post => { %>
       <div class="input-group">
-        <a href="/posts/<%= post.id %>">
-          <p class="user">
+        <a href="/posts/<%= post.id %>">Click</a>
             <img class="profile-pic" src="<%= post.img_url %>">
+            <p><%= post.id %></p>
+            <p class="user">
               <%= post.name %>
           </p>
       </div>
-        <p class="img">
+        <div class="img">
           <img class="add-img" src="<%= post.photo_url %>">
-        </p>
-      </a>
+        </div>
       <p class="description">
         <%= post.description %>
       </p>
         <p class="date-time">
-          <%= post.published_at %>
+         <%=fromNow(post.published_at) %>
         </p>
     <% }) %>
   </div>

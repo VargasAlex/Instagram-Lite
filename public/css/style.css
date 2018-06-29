@@ -65,14 +65,33 @@
   align-items: flex-start;
 }
 
+.a2a_kit {
+  border: 3px solid black;
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+}
+
 a {
   text-decoration: none;
   color: black;
 }
 
 .nav {
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  position: fixed;
+  bottom: 0pt;
+  left: 0pt;
+  width: 100%;
+  background-color: red;
 }
+
+
 
 
 
