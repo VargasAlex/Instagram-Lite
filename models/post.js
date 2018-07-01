@@ -21,7 +21,7 @@ Post.findById = id => {
 
 Post.update = post => {
   return db.one(
-    "UPDATE posts SET user_id = ${user_id}, photo_url = ${photo_url}, description = ${description} WHERE post.id = ${id} RETURNING *", post)
+    "UPDATE posts SET user_id = ${user_id}, photo_url = ${photo_url}, description = ${description} WHERE posts.id = ${id} RETURNING *", post)
 };
 
 Post.delete = id => {

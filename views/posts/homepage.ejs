@@ -5,7 +5,7 @@
   <div class="input-group">
     <% posts.forEach(post => { %>
         <p><a href="/posts/<%= post.post_id %>"><img class="profile-pic" src="<%= post.img_url %>">
-        <%= post.name %></a></p>
+        <%= post.user_name %></a></p>
         <div class="img">
           <img class="add-img" src="<%= post.photo_url %>">
         </div>

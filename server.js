@@ -21,6 +21,7 @@ app.listen(port, function () {
 app.get("/",  (request, response) => {
   Post.all()
     .then(posts => {
+      console.log('All posts',posts)
       response.render('posts/homepage', {posts: posts})
     })
 });
@@ -61,7 +62,10 @@ app.put('/posts/:id', (request, response) => {
   console.log('Updated post:', updatePost)
   Post.update(updatePost)
     .then(post => {
-      response.redirect(302, `/posts/${posts.id}`)
+      response.redirect(302, `/posts/${post.id}`)
+    })
+    .catch(error => {
+      console.log('This is an error', error)
     })
 })
 
@@ -76,10 +80,11 @@ app.delete('/posts/:id', (request, response) => {
 
 app.post("/posts", (request, response) => {
   const newPost = request.body;
+  console.log('This is a new post')
   newPost.published_at = new Date ();
   Post.create(newPost)
     .then(post => {
-      response.redirect(302, `/posts/${posts.id}`)
+      response.redirect(302, `/posts/${post.id}`)
       console.log(post)
     })
 })
