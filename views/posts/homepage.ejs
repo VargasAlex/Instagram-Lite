@@ -1,20 +1,28 @@
 <% include ../partials/header %>
 
-<h2 class="home-h2">Instagram-Lite</h2>
-<div class="home-container">
+<h2>Instagram-Lite</h2>
+<div class="container">
   <div class="input-group">
     <% posts.forEach(post => { %>
-        <p><a href="/posts/<%= post.post_id %>"><img class="profile-pic" src="<%= post.img_url %>">
-        <%= post.user_name %></a></p>
-        <div class="img">
-          <img class="add-img" src="<%= post.photo_url %>">
-        </div>
-      <p class="description">
+    <div class="input-header">
+        <a href="/posts/<%= post.post_id %>"><img class="input-pic" src="<%= post.img_url %>"></a>
+        <a class="input-name"><%= post.user_name %></a>
+        <a class="a2a_dd" href="https://www.addtoany.com/share"><i style="font-size:24px" class="fa share">&#xf064;</i></a>
+    </div>
+    <div class="input-image">
+      <img src="<%= post.photo_url %>">
+    </div>
+    <div class="input-description">
         <%= post.description %>
-      </p>
-        <p class="date-time">
+    </div>
+    <div class="input-time">
          <%=fromNow(post.published_at) %>
-        </p>
+    </div>
+    <div class="input-end">
+      <i class="fa fa-heart-o nx"></i>
+      <input type="text" class="input-comment" placeholder="Add a comment..." />
+      <i class="fa fa-sort-down nz"></i>
+    </div>
     <% }) %>
   </div>
 </div>

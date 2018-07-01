@@ -2,20 +2,25 @@
 
 <div class="container">
   <div class="input-group">
-    <p><a href="/posts/<%= post.post_id %>/edit"><i style="font-size:24px" class="fa">&#xf14b;</i></a></p>
-    <div class="user">
-      <img class ="profile-pic" src= "<%= post.img_url %>">
-      <%= post.user_name %>
+    <div class="input-header">
+      <img class ="input-pic" src= "<%= post.img_url %>">
+      <span class="input-name"> <%= post.user_name %> </span>
     </div>
-    <div class="img">
-      <img class="add-img" src="<%= post.photo_url %>">
+    <div class="input-image">
+      <img src="<%= post.photo_url %>">
     </div>
-    <p class="description">
+    <div class="input-description">
       <%= post.description %>
-    </p>
-    <p class="date-time">
+    </div>
+    <div class="input-time">
       <%= post.published_at %>
-    </p>
+    </div>
+    <a class="input-edit" href="/posts/<%= post.post_id %>/edit">
+      <i style="font-size:24px" class="fa edit">&#xf14b;</i>
+    </a>
   </div>
 </div>
+
 <% include ../partials/footer %>
+
+
