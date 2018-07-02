@@ -1,7 +1,12 @@
 $(document).ready(function () {
 
   $('.nx').click(function () {
-    $(this).replaceWith('<i class="fa fa-heart mx"></i>');
+    $('.nx').toggleClass('mx');
   });
 
+
+
 });
+
+
+// $('.nx').toggleClass('fa-heart mx');

@@ -6,7 +6,8 @@
     <% posts.forEach(post => { %>
     <div class="input-header">
         <a href="/posts/<%= post.post_id %>"><img class="input-pic" src="<%= post.img_url %>"></a>
-        <a class="input-name"><%= post.user_name %></a>
+        <a href="/posts/
+        <%= post.post_id %>" class="input-name"><%= post.user_name %></a>
         <a class="a2a_dd" href="https://www.addtoany.com/share"><i style="font-size:24px" class="fa share">&#xf064;</i></a>
     </div>
     <div class="input-image">
