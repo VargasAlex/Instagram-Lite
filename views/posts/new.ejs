@@ -4,7 +4,8 @@
 <div class="container">
   <form action="/posts" method="POST">
     <div class="input-group">
-      <label>Your Image</label>
+      <div id="new-image">
+      </div>
     </div>
     <div class="input-group">
       <label>User: </label>
@@ -16,8 +17,7 @@
     </div>
   <div class="input-group">
    <label>Image: </label>
-   <input type="text" name="photo_url" size="70" placeholder="Insert image url here...">
-   <!-- <button type="submit" class="img-btn">Add Image</button> -->
+   <input id="photo-url" type="text" name="photo_url" size="70" placeholder="Insert image url here...">
   </div>
   <div class="input-group">
    <label>Description: </label>

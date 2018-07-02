@@ -5,7 +5,9 @@
 <form action="/posts/<%= post.post_id %>?_method=PUT" method="POST">
   <div class="edit">
     <div class="input-group">
-      <label>Your Image</label>
+      <div id="new-image">
+        <img src="<%= post.photo_url %>">
+      </div>
     </div>
     <div class="input-group">
       <label>User</label>
@@ -25,7 +27,6 @@
     <div class="input-group">
       <label>Image: </label>
       <input type="text" name="photo_url" value="<%= post.photo_url %>" size="70" placeholder="Insert image url here...">
-  <!-- <button type="submit" class="img-btn">Add Image</button> -->
     </div>
     <div class="input-group">
       <label>Description: </label>
@@ -38,7 +39,7 @@
   </form>
   <div class="input-group">
     <form action="/posts/<%= post.post_id %>?_method=DELETE" method="POST">
-      <button type="submit" class="del-btn"><i style="font-size:24px" class="fa">&#xf1f8;</i></button>
+    <button type="submit" class="del-btn"><i style="font-size:24px" class="fa">&#xf1f8;</i></button>
     </form>
   </div>
 </div>
