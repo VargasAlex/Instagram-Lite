@@ -13,7 +13,7 @@
       <%= post.description %>
     </div>
     <div class="input-time">
-      <%= post.published_at %>
+      <%= fromNow(post.published_at) %>
     </div>
     <a class="input-edit" href="/posts/<%= post.post_id %>/edit">
       <i style="font-size:24px" class="fa edit">&#xf14b;</i>

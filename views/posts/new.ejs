@@ -1,13 +1,13 @@
 <% include ../partials/header %>
 
-<h2 class="new-h2">Create a post</h2>
-<div class="new-container">
+<h2>Create a post</h2>
+<div class="container">
   <form action="/posts" method="POST">
     <div class="upload">
       <label>Your Image</label>
     </div>
     <div class="input-group">
-      <label>User</label>
+      <label>User: </label>
       <select name="user_id">
         <% users.forEach(user => { %>
           <option value="<%= user.id %>"><%= user.name %></option>
@@ -15,12 +15,12 @@
       </select>
     </div>
   <div class="input-group">
-   <label>Image</label>
-   <input type="text" name="photo_url" placeholder="Insert image url here...">
+   <label>Image: </label>
+   <input type="text" name="photo_url" size="70" placeholder="Insert image url here...">
    <!-- <button type="submit" class="img-btn">Add Image</button> -->
   </div>
   <div class="input-group">
-   <label>Description</label>
+   <label>Description: </label>
     <textarea rows="10" cols="50" name="description" placeholder="Add your description here..."></textarea>
   </div>
   <div class="input-group">
@@ -30,3 +30,4 @@
 </div>
 
 <% include ../partials/footer %>
+

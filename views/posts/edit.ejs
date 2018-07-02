@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 
 <h2>Edit Your Post</h2>
-
+<div class="container">
 <form action="/posts/<%= post.post_id %>?_method=PUT" method="POST">
   <div class="edit">
     <div class="upload">
@@ -11,7 +11,7 @@
       <label>User</label>
         <select name="user_id">
           <% users.forEach(user => { %>
-            <% if (user.user_id === user.id) { %>
+            <% if (post.user_id === user.id) { %>
           <option value="<%= user.id %>" selected>
             <%= user.name %>
           </option>
@@ -23,13 +23,14 @@
         </select>
     </div>
     <div class="input-group">
-      <label>Image</label>
-      <input type="text" name="photo_url" value="<%= post.photo_url %>" placeholder="Insert image url here...">
+      <label>Image: </label>
+      <input type="text" name="photo_url" value="<%= post.photo_url %>" size="70" placeholder="Insert image url here...">
   <!-- <button type="submit" class="img-btn">Add Image</button> -->
     </div>
     <div class="input-group">
-      <label>Description</label>
-      <textarea rows="10" cols="50" name="description" value="<%= post.description %>" placeholder="Add your description here..."></textarea>
+      <label>Description: </label>
+      <textarea rows="10" cols="50" name="description" value="<%= post.description %>" placeholder="
+      <%= post.description %>" ></textarea>
     </div>
     <div class="input-group">
         <button type="submit" class="sub-btn"><i style="font-size:24px" class="fa">&#xf14b;</i></button>
