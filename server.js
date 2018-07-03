@@ -1,12 +1,14 @@
 // start boilerplate code
+require('dotenv').config()
 const express = require("express")
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const bodyParser = require("body-parser")
 const Post = require("./models/post")
 const User = require("./models/user")
 const moment = require("moment")
 const methodOverride = require('method-override')
+
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/public', express.static('public'))
