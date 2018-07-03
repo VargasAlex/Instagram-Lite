@@ -12,7 +12,7 @@
     </div>
     <div class="input-group">
       <label>User</label>
-        <select name="user_id">
+        <select name="user_id" disabled>
           <% users.forEach(user => { %>
             <% if (post.user_id === user.id) { %>
           <option value="<%= user.id %>" selected>
