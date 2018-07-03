@@ -11,7 +11,7 @@ $(document).ready(function () {
 
   $('#photo-url').bind('input paste', function () {
     const image = $('#photo-url').val()
-    $('#new-image').append(`<img src=${image}>`)
+    $('#new-image').html(`<img src=${image}>`)
   })
 
 });
