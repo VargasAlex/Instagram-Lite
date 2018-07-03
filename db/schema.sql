@@ -1,6 +1,6 @@
-CREATE DATABASE instagramlite;
+-- CREATE DATABASE instagramlite;
 
-\c instagramlite
+-- \c instagramlite
 
 DROP TABLE if exists users cascade;
 DROP TABLE if exists posts cascade;

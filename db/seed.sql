@@ -1,4 +1,4 @@
-\c instagramlite
+-- \c instagramlite
 
 DELETE FROM posts;
 DELETE FROM users;
