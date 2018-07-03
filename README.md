@@ -11,6 +11,7 @@ Project 2 CRUD app
 
 ##I then ran:
 ###These commands initialized the app and installed node modules.
+###Note: Install Node.js https://nodejs.org/en/
 
 'npm init'
 
@@ -48,4 +49,6 @@ Project 2 CRUD app
 3) Comments - having the ability to comment on a post.
 
 4) Changing the "like" button from front-end javascript to back-end javascript so it can be stored in the database.
+
+5) Adding video compability to posts.
 
