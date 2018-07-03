@@ -144,7 +144,29 @@ button {
   and (min-device-width: 375px)
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    color: #ddd;
+    .edit-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .input-group{
+      border-radius: 3px;
+      box-sizing: border-box;
+      background-color: #fff;
+      border: 1px solid #efefef;
+      width: 300px;
+      margin: .25em;
+      align-self: center;
+      flex-basis: 450px;
+    }
+
+    input[type="text"] {
+      width: 200px;
+    }
+
+    textarea {
+      width: 200px;
+    }
 }
 
 
@@ -155,7 +177,29 @@ button {
   and (min-device-width: 414px)
   and (max-device-width: 736px)
   and (-webkit-min-device-pixel-ratio: 3) {
-    color: #ddd;
+    .edit-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .input-group{
+      border-radius: 3px;
+      box-sizing: border-box;
+      background-color: #fff;
+      border: 1px solid #efefef;
+      width: 500px;
+      margin: .25em;
+      align-self: center;
+      flex-basis: 450px;
+    }
+
+    input[type="text"] {
+      width: 200px;
+    }
+
+    textarea {
+      width: 200px;
+    }
 }
 
 
@@ -165,5 +209,27 @@ button {
   and (min-device-width: 375px)
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3) {
-    color: #ddd;
+    .edit-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .input-group{
+      border-radius: 3px;
+      box-sizing: border-box;
+      background-color: #fff;
+      border: 1px solid #efefef;
+      width: 300px;
+      margin: .25em;
+      align-self: center;
+      flex-basis: 450px;
+    }
+
+    input[type="text"] {
+      width: 200px;
+    }
+
+    textarea {
+      width: 200px;
+    }
 }
