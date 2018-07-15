@@ -4,7 +4,7 @@ const Post = {};
 
 Post.all = post => {
   return db.any(
-    "SELECT posts.id AS post_id, posts.user_id AS user_id, posts.photo_url, posts.description, posts.published_at, users.name AS user_name, users.img_url AS img_url FROM posts JOIN users ON users.id = posts.user_id"
+    "SELECT posts.id AS post_id, posts.user_id AS user_id, posts.photo_url, posts.description, posts.published_at, users.name AS user_name, users.img_url AS img_url FROM posts JOIN users ON users.id = posts.user_id", post
   )
 };
 

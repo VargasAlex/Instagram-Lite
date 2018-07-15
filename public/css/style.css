@@ -137,6 +137,36 @@ button {
   background: none;
 }
 
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .edit-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .input-group{
+      border-radius: 3px;
+      box-sizing: border-box;
+      background-color: #fff;
+      border: 1px solid #efefef;
+      width: 300px;
+      margin: .25em;
+      align-self: center;
+      flex-basis: 450px;
+    }
+
+    input[type="text"] {
+      width: 200px;
+    }
+
+    textarea {
+      width: 200px;
+    }
+}
+
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
 /* Portrait and Landscape */
